@@ -1,19 +1,34 @@
-export default function Packages(props) {
-    const displayPackages = props.packages.map((eachPackage) => <li>{eachPackage}</li>)
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Home from './Home';
+
+export function Packages(props) {
+    const displayPackages = props.packages.map((eachPackage, index) => 
+        <ListGroup.Item key={index}>{eachPackage}</ListGroup.Item>);
 
     return (
-        <div>
-            <div className="packages">
-                <div className="packagesHeader">
-                    <h1>Our Packages</h1>
-                </div>
-                <ul>
-                    {displayPackages}
-                </ul>
-            </div>
-        </div>
-    )
+        <Container>
+            <Home/>
+            <Card>
+                <Card.Body>
+                    <Card.Title>Our Packages</Card.Title>
+                    <Card.Text>
+                        Check out some of our packages! Every package is ethically sourced and organic!
+                    </Card.Text>
+                </Card.Body>
+                <ListGroup>
+                    {displayPackages} 
+                </ListGroup>
+            </Card>
+        </Container>
+    );
 }
+
+export default Packages;
+
+
 
 
 

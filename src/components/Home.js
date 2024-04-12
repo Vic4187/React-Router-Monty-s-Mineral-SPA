@@ -1,5 +1,3 @@
-
-
 export default function Home () {
     return(
         <div className="homepage">
@@ -11,5 +9,4 @@ export default function Home () {
 
         </div>
     )
-
-}
+};
